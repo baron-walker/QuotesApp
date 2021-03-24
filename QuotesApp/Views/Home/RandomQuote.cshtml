@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">See a Cool Random Quote!</h1>
+    @*
+        For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    *@
+    @{
+        ViewBag.Title = "Here is a list of the entered quotes";
+    }
+
+    @model IEnumerable<QuotesApp.Models.QuoteItem>
+    <!-- create movie list table -->
+    <div>
+
+        <table id="t01">
+            <tr>
+                <th>Quote</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Citation</th>
+            </tr>
+
+            <!-- loop through each movie row -->
+            @{ 
+                int y = @ViewBag.idnum;
+            }
+            <tr>
+                <td>@Model.ElementAt(y).Quote</td>
+                <td>@Model.ElementAt(y).QuoteDate</td>
+                <td>@Model.ElementAt(y).QuoteSubject</td>
+                <td>@Model.ElementAt(y).QuoteAuthor</td>
+                <td>@Model.ElementAt(y).QuoteCitation</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+@model QuoteItem
+<!-- Form for updateing old movie data -->
+<h2>Edit Quote</h2>
+<form method="post">
+    <div>
+        <label asp-for="Quote">Quote: </label>
+        <input class="form-control" asp-for="Quote" required />
+    </div>
+
+    <div>
+        <label asp-for="QuoteAuthor">Author</label>
+        <input class="form-control" asp-for="QuoteAuthor" required />
+    </div>
+
+    <div>
+        <label asp-for="QuoteDate">Date</label>
+        <input class="form-control" asp-for="QuoteDate" type="date" required />
+    </div>
+
+    <div>
+        <label asp-for="QuoteSubject">Subject</label>
+        <input class="form-control" asp-for="QuoteSubject" />
+    </div>
+
+    <div>
+        <label asp-for="QuoteCitation">Citation</label>
+        <input class="form-control" asp-for="QuoteCitation" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Quote</button>
+    <div asp-validation-summary="All"></div>
+</form>
